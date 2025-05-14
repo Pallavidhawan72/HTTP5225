@@ -25,5 +25,9 @@
     echo "Hello " . "$fname " . "$lname";
 ?>
 
+<?php 
+    $myfriends = array('Narinder', 'Chait', 'Raman');
+
+?>
 </body>
 </html>
