@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.Card {
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 20px;
+    display: inline-block;
+    width: 300px;
+    min-height: 180px;
+    vertical-align: top;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Card h4 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.Card p {
+    margin: 8px 0;
+}
+
+/* Container for Edit + Delete buttons */
+.button-group {
+    margin-top: 10px;
+}
+
+/* Forms inline inside card */
+.Card form {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Submit buttons */
+.Card input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Delete button specific style */
+.Card form:last-child input[type="submit"] {
+    background-color: #dc3545;
+}
+
+.Card input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Anchor buttons (if needed elsewhere) */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 10px;
+    margin-right: 6px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+a.btn {
+    color: white;
+}
