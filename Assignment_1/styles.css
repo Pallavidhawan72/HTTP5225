@@ -1,0 +1,241 @@
+/* I am styling the main body and background for the site */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    margin: 0;
+    padding: 30px 0;
+    min-height: 100vh;
+}
+
+/* I am styling the main heading */
+h1 {
+    text-align: center;
+    color: #2d3a4b;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+/* I am styling the project cards container */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* I am styling each individual project card */
+.project {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+    padding: 24px 20px 18px 20px;
+    width: 320px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+}
+.project:hover {
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* I am styling the project images */
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+}
+
+/* I am styling the project title */
+.project h2 {
+    margin: 12px 0 6px;
+    font-size: 1.35rem;
+    color: #1a2636;
+    font-weight: 600;
+}
+
+/* I am styling the project description */
+.project p {
+    margin: 7px 0;
+    font-size: 15px;
+    color: #4a5a6a;
+    line-height: 1.6;
+}
+
+/* I am highlighting UI elements */
+.highlight-ui {
+    background: linear-gradient(90deg, #e0f7fa 0%, #b2ebf2 100%);
+    padding: 7px 14px;
+    display: inline-block;
+    margin-top: 12px;
+    color: #00796b;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* I am centering the Add New Project button */
+.add-btn-container {
+    text-align: center;
+    margin: 0;
+}
+
+/* I am styling reusable buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 6px 4px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* I am styling the Add button */
+.add-btn {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.add-btn:hover {
+    background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* I am styling the Edit button */
+.edit-btn {
+    background: linear-gradient(90deg, #2196F3 0%, #21CBF3 100%);
+}
+
+.edit-btn:hover {
+    background: linear-gradient(90deg, #21CBF3 0%, #2196F3 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* I am styling the Delete button */
+.delete-btn {
+    background: linear-gradient(90deg, #f44336 0%, #ff7961 100%);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(90deg, #ff7961 0%, #f44336 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* I am styling the form container */
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 28px 24px 22px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 7px;
+    color: #2d3a4b;
+    letter-spacing: 0.5px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border: 1.5px solid #cfd8dc;
+    border-radius: 6px;
+    background: #f7fafc;
+    margin-top: 2px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #38f9d7;
+    box-shadow: 0 0 0 2px #b2ebf2;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* I am centering the form on the page */
+.form-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.form-center h1 {
+    margin-bottom: 24px;
+    color: #2d3a4b;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+    margin-top: 10px;
+}
+
+.header-center h1 {
+    margin-bottom: 12px;
+    color: #2d3a4b;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+.project-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto;
+}
