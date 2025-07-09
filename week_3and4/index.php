@@ -41,7 +41,7 @@ echo "Food: $food<br>";
 <h2>Challenge 2: Magic Number Game</h2>
 
 <?php
-// Simulate user input number (1 to 1000)
+// Simulating user input number (1 to 1000)
 $number = rand(1, 1000);
 
 // Determine magic number
