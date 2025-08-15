@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quirky Zoo & Magic Number Game</title>
 </head>
 <body>
@@ -12,27 +14,27 @@
 $currentHour = rand(1, 23);
 
 // Initialize variables
-$meal = "";
+$mealtype = "";
 $food = "";
 
 // Check feeding time and assign meal/food
 if ($currentHour >= 5 && $currentHour < 9) {
-    $meal = "Breakfast";
+    $mealtype = "Breakfast";
     $food = "Bananas, Apples, and Oats";
 } elseif ($currentHour >= 12 && $currentHour < 14) {
-    $meal = "Lunch";
+    $mealtype = "Lunch";
     $food = "Fish, Chicken, and Vegetables";
 } elseif ($currentHour >= 19 && $currentHour < 21) {
-    $meal = "Dinner";
+    $mealtype = "Dinner";
     $food = "Steak, Carrots, and Broccoli";
 } else {
-    $meal = "No Feeding Time";
+    $mealtype = "No Feeding Time";
     $food = "The animals are not being fed right now.";
 }
 
 // Output result
 echo "Current Time (Hour): $currentHour<br>";
-echo "Meal: $meal<br>";
+echo "Meal: $mealtype<br>";
 echo "Food: $food<br>";
 ?>
 
@@ -54,7 +56,6 @@ if ($number % 3 == 0 && $number % 5 == 0) {
 } else {
     $magic = $number;
 }
-
 // Output result
 echo "Input Number: $number<br>";
 echo "Magic Number: $magic<br>";
