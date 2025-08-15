@@ -14,6 +14,7 @@
 $currentHour = rand(1, 23);
 
 // Initialize variables
+<<<<<<< HEAD
 $mealtype = "";
 $food = "";
 
@@ -30,12 +31,36 @@ if ($currentHour >= 5 && $currentHour < 9) {
 } else {
     $mealtype = "No Feeding Time";
     $food = "The animals are not being fed right now.";
+=======
+$mealtime = "";
+$foodtype = "";
+
+// Check feeding time and assign meal/food
+if ($currentHour >= 5 && $currentHour < 9) {
+    $mealtime = "Breakfast";
+    $foodtype = "Bananas, Apples, and Oats";
+} elseif ($currentHour >= 12 && $currentHour < 14) {
+    $mealtime = "Lunch";
+    $foodtype = "Fish, Chicken, and Vegetables";
+} elseif ($currentHour >= 19 && $currentHour < 21) {
+    $mealtime = "Dinner";
+    $foodtype = "Steak, Carrots, and Broccoli";
+} else {
+    $mealtime = "No Feeding Time";
+    $foodtype = "The animals are not being fed right now.";
+>>>>>>> fca5a1f9cb742a9b969366cf84197033797e7836
 }
 
 // Output result
 echo "Current Time (Hour): $currentHour<br>";
+<<<<<<< HEAD
 echo "Meal: $mealtype<br>";
 echo "Food: $food<br>";
+=======
+echo "Mealtime: $mealtime<br>";
+echo "Foodtype: $foodtype
+<br>";
+>>>>>>> fca5a1f9cb742a9b969366cf84197033797e7836
 ?>
 
 <hr>
@@ -43,7 +68,7 @@ echo "Food: $food<br>";
 <h2>Challenge 2: Magic Number Game</h2>
 
 <?php
-// Simulate user input number (1 to 1000)
+// Simulating user input number (1 to 1000)
 $number = rand(1, 1000);
 
 // Determine magic number
