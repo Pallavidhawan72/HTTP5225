@@ -12,6 +12,24 @@ class CourseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Course::factory(10)->create();
+        $courses = [
+            'Introduction to Computer Science',
+            'Data Structures and Algorithms',
+            'Database Systems',
+            'Web Development',
+            'Software Engineering',
+            'Operating Systems',
+            'Networks and Security',
+            'Mobile Application Development',
+            'Artificial Intelligence',
+            'Cloud Computing',
+        ];
+
+        foreach ($courses as $courseName) {
+            \App\Models\Course::create([
+                'name' => $courseName,
+                'description' => $courseName . ' course description',
+            ]);
+        }
     }
 }
