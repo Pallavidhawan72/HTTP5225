@@ -20,7 +20,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        $courses = \App\Models\Course::all();
+        return view('students.create', compact('courses'));
     }
 
     /**
@@ -28,7 +29,11 @@ class StudentController extends Controller
      */
     public function store(\App\Http\Requests\StoreStudentRequest $request)
     {
-        $student = \App\Models\Student::create($request->validated());
+        $data = $request->validated();
+        $courses = $data['courses'];
+        unset($data['courses']);
+        $student = \App\Models\Student::create($data);
+        $student->courses()->sync($courses);
         return redirect()->route('students.index')->with('success', 'Student created successfully.');
     }
 
@@ -47,7 +52,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = \App\Models\Student::findOrFail($id);
-        return view('students.edit', compact('student'));
+        $courses = \App\Models\Course::all();
+        return view('students.edit', compact('student', 'courses'));
     }
 
     /**
@@ -55,7 +61,11 @@ class StudentController extends Controller
      */
     public function update(\App\Http\Requests\UpdateStudentRequest $request, \App\Models\Student $student)
     {
-        $student->update($request->validated());
+        $data = $request->validated();
+        $courses = $data['courses'];
+        unset($data['courses']);
+        $student->update($data);
+        $student->courses()->sync($courses);
         return redirect()->route('students.index')->with('success', 'Student updated successfully.');
     }
 

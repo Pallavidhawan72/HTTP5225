@@ -13,4 +13,10 @@ class Professor extends Model
     protected $fillable = [
         'name',
     ];
+
+    // One-to-one relationship with course
+    public function course()
+    {
+        return $this->hasOne(Course::class);
+    }
 }

@@ -22,6 +22,15 @@
             <label for="email" class="form-label">Email</label>
             <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
         </div>
+        <div class="mb-3">
+            <label for="courses" class="form-label">Courses</label>
+            <select name="courses[]" id="courses" class="form-select" multiple required>
+                @foreach($courses as $course)
+                    <option value="{{ $course->id }}" {{ (collect(old('courses'))->contains($course->id)) ? 'selected' : '' }}>{{ $course->name }}</option>
+                @endforeach
+            </select>
+            <div class="form-text">Hold Ctrl (Windows) or Command (Mac) to select multiple courses.</div>
+        </div>
         <button type="submit" class="btn btn-primary">Create</button>
         <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
