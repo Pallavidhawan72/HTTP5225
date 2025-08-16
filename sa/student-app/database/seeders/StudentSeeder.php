@@ -12,6 +12,10 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-    \App\Models\Student::factory(100)->create();
+        $courses = \App\Models\Course::all();
+        \App\Models\Student::factory(100)->create()->each(function ($student) use ($courses) {
+            // Assign 1 to 3 random courses to each student
+            $student->courses()->sync($courses->random(rand(1, min(3, $courses->count())))->pluck('id')->toArray());
+        });
     }
 }

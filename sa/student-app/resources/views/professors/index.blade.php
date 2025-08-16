@@ -8,6 +8,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Assigned Course</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,6 +17,9 @@
                 <tr>
                     <td>{{ $professor->id }}</td>
                     <td>{{ $professor->name }}</td>
+                    <td>
+                        {{ $professor->course ? $professor->course->name : 'None' }}
+                    </td>
                     <td>
                         <a href="{{ route('professors.edit', $professor) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('professors.destroy', $professor) }}" method="POST" class="d-inline">

@@ -25,10 +25,16 @@ class CourseSeeder extends Seeder
             'Cloud Computing',
         ];
 
+        $professors = \App\Models\Professor::all();
+        $usedProfessors = [];
         foreach ($courses as $courseName) {
+            // Assign a unique professor to each course if available
+            $professor = $professors->whereNotIn('id', $usedProfessors)->random(null);
+            $usedProfessors[] = $professor->id;
             \App\Models\Course::create([
                 'name' => $courseName,
                 'description' => $courseName . ' course description',
+                'professor_id' => $professor->id,
             ]);
         }
     }

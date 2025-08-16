@@ -15,6 +15,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Courses</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +25,17 @@
                     <td>{{ $student->id }}</td>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
+                    <td>
+                        @if($student->courses->count())
+                            <ul class="mb-0 ps-3">
+                                @foreach($student->courses as $course)
+                                    <li>{{ $course->name }}</li>
+                                @endforeach
+                            </ul>
+                        @else
+                            None
+                        @endif
+                    </td>
                     <td>
                         <a href="{{ route('students.show', $student) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('students.edit', $student) }}" class="btn btn-warning btn-sm">Edit</a>

@@ -20,7 +20,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        $professors = \App\Models\Professor::all();
+        return view('courses.create', compact('professors'));
     }
 
     /**
@@ -28,7 +29,9 @@ class CourseController extends Controller
      */
     public function store(\App\Http\Requests\StoreCourseRequest $request)
     {
-        $course = \App\Models\Course::create($request->validated());
+        $data = $request->validated();
+        $data['professor_id'] = $request->input('professor_id');
+        $course = \App\Models\Course::create($data);
         return redirect()->route('courses.index')->with('success', 'Course created successfully.');
     }
 
@@ -47,7 +50,8 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = \App\Models\Course::findOrFail($id);
-        return view('courses.edit', compact('course'));
+        $professors = \App\Models\Professor::all();
+        return view('courses.edit', compact('course', 'professors'));
     }
 
     /**
@@ -56,7 +60,9 @@ class CourseController extends Controller
     public function update(\App\Http\Requests\UpdateCourseRequest $request, $id)
     {
         $course = \App\Models\Course::findOrFail($id);
-        $course->update($request->validated());
+        $data = $request->validated();
+        $data['professor_id'] = $request->input('professor_id');
+        $course->update($data);
         return redirect()->route('courses.index')->with('success', 'Course updated successfully.');
     }
 
